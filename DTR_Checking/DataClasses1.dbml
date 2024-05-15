@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Systems" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=172.16.2.3;Initial Catalog=Systems;Persist Security Info=True;User ID=sa" SettingsObjectName="DTR_Checking.My.MySettings" SettingsPropertyName="SystemsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_Absent" Member="tbl_Absents">
+    <Type Name="tbl_Absent">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Session" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Terminal" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_EmployeeInformation_tbl_Absent" Member="tbl_EmployeeInformation" ThisKey="UserID" OtherKey="EmpID" Type="tbl_EmployeeInformation" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_EmployeeInformation" Member="tbl_EmployeeInformations">
+    <Type Name="tbl_EmployeeInformation">
+      <Column Name="EmpID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ZKNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Fname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Lname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Extname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Bplace" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Height" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Religion" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Street" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Brgy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EmpStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DHired" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="SSS" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PhilHealth" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="WTax" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Pagibig" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Picture" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Rate" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Cola" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CBond" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DAllowance" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="F2SRemarks" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="F2S" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="F2SDDeduc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="F2SDEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="F2SBalance" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BloodType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TCBond" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="AccNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FundAcc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SRate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bank" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Payment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TimeInAM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TimeOutAM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TimeInPM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TimeOutPM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Weekday" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TimeInAMOther" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TimeOutAMOther" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TimeInPMOther" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TimeOutPMOther" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Terminals" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WPayroll" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IRT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SSSRemarks" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SSSDHired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PHICRemarks" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PHICDHired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PrintFlag" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="DaysLeave" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LeaveIssue" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="DateSeparated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BAssist" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="WInterval" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmpTrailStatus" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="OtherSchedule" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RestrictIllegalTerminalChange" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RestrictIllegalCompanyChange" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsFlexy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsNoNoonLogs" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_EmployeeInformation_tbl_Absent" Member="tbl_Absents" ThisKey="EmpID" OtherKey="UserID" Type="tbl_Absent" />
+      <Association Name="tbl_EmployeeInformation_tbl_Payroll" Member="tbl_Payrolls" ThisKey="EmpID" OtherKey="EmpID" Type="tbl_Payroll" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_Payroll" Member="tbl_Payrolls">
+    <Type Name="tbl_Payroll">
+      <Column Name="EmpID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="RatePD" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ColaPD" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="NOD" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Holiday" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Cola" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Overtime" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="SOthers" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="SSSRate" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="SSS" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PhilRate" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PhilHealth" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="WTax" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PagibigRate" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Pagibig" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="F2SRate" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="F2S" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="SSSLoan" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PLoan" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CBond" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Late" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Undertime" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="COOP" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Vale" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OD" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DOthers" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TSalary" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TDeduction" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Net" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PeriodFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PeriodTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ValeB" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="COOPB" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OthersB" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="SSSB" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PagibigB" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ODB" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="F2SB" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CalamityLoan" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CalamityB" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="NightDiff" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CalamityLoanSSS" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CalamitySSSB" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="IsPaygen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SSSMonthly" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PagibigMonthly" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PhilHealthMonthly" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="tbl_EmployeeInformation_tbl_Payroll" Member="tbl_EmployeeInformation" ThisKey="EmpID" OtherKey="EmpID" Type="tbl_EmployeeInformation" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SP_DTRWPAY" Method="SP_DTRWPAY">
+    <Parameter Name="p_DATEFROM" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="p_DATETO" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="p_SEARCH" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="SP_DTRWPAYResult">
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Employee" Type="System.String" DbType="NVarChar(153)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Session" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
