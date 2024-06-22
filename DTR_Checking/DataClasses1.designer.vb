@@ -88,10 +88,47 @@ Partial Public Class DataClasses1DataContext
 		End Get
 	End Property
 	
+	Public ReadOnly Property tbl_EmployeeRequirements() As System.Data.Linq.Table(Of tbl_EmployeeRequirement)
+		Get
+			Return Me.GetTable(Of tbl_EmployeeRequirement)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tbl_OtherDetails() As System.Data.Linq.Table(Of tbl_OtherDetail)
+		Get
+			Return Me.GetTable(Of tbl_OtherDetail)
+		End Get
+	End Property
+	
 	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.SP_DTRWPAY")>  _
 	Public Function SP_DTRWPAY(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="Date")> ByVal p_DATEFROM As System.Nullable(Of Date), <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="Date")> ByVal p_DATETO As System.Nullable(Of Date), <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(200)")> ByVal p_SEARCH As String) As ISingleResult(Of SP_DTRWPAYResult)
 		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), p_DATEFROM, p_DATETO, p_SEARCH)
 		Return CType(result.ReturnValue,ISingleResult(Of SP_DTRWPAYResult))
+	End Function
+	
+	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.SP_PayrollAdjustment")>  _
+	Public Function SP_PayrollAdjustment( _
+				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="EMPID", DbType:="VarChar(200)")> ByVal eMPID As String,  _
+				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="PERIODFROM", DbType:="Date")> ByVal pERIODFROM As System.Nullable(Of Date),  _
+				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="NOD", DbType:="Decimal(8,2)")> ByVal nOD As System.Nullable(Of Decimal),  _
+				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="HOLIDAY", DbType:="Decimal(8,2)")> ByVal hOLIDAY As System.Nullable(Of Decimal),  _
+				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="OVERTIME", DbType:="Decimal(8,2)")> ByVal oVERTIME As System.Nullable(Of Decimal),  _
+				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="SOTHERS", DbType:="Decimal(8,2)")> ByVal sOTHERS As System.Nullable(Of Decimal),  _
+				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="SOTHERSDETAILS", DbType:="VarChar(200)")> ByVal sOTHERSDETAILS As String,  _
+				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="SSS", DbType:="Decimal(8,2)")> ByVal sSS As System.Nullable(Of Decimal),  _
+				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="PhilHealth", DbType:="Decimal(8,2)")> ByVal philHealth As System.Nullable(Of Decimal),  _
+				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="PAGIBIG", DbType:="Decimal(8,2)")> ByVal pAGIBIG As System.Nullable(Of Decimal),  _
+				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="SSSb", DbType:="Decimal(8,2)")> ByVal sSSb As System.Nullable(Of Decimal),  _
+				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="PAGIBIGb", DbType:="Decimal(8,2)")> ByVal pAGIBIGb As System.Nullable(Of Decimal),  _
+				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="OTHERSb", DbType:="Decimal(8,2)")> ByVal oTHERSb As System.Nullable(Of Decimal),  _
+				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="SSSLOAN", DbType:="Decimal(8,2)")> ByVal sSSLOAN As System.Nullable(Of Decimal),  _
+				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="PLOAN", DbType:="Decimal(8,2)")> ByVal pLOAN As System.Nullable(Of Decimal),  _
+				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="DOTHERS", DbType:="Decimal(8,2)")> ByVal dOTHERS As System.Nullable(Of Decimal),  _
+				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="DOTHERSDETAILS", DbType:="VarChar(200)")> ByVal dOTHERSDETAILS As String,  _
+				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="HOLIDAYDETAILS", DbType:="VarChar(200)")> ByVal hOLIDAYDETAILS As String,  _
+				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="WTAX", DbType:="Decimal(8,2)")> ByVal wTAX As System.Nullable(Of Decimal)) As Integer
+		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), eMPID, pERIODFROM, nOD, hOLIDAY, oVERTIME, sOTHERS, sOTHERSDETAILS, sSS, philHealth, pAGIBIG, sSSb, pAGIBIGb, oTHERSb, sSSLOAN, pLOAN, dOTHERS, dOTHERSDETAILS, hOLIDAYDETAILS, wTAX)
+		Return CType(result.ReturnValue,Integer)
 	End Function
 End Class
 
@@ -2678,6 +2715,428 @@ Partial Public Class tbl_Payroll
 		Set
 			If (Me._PhilHealthMonthly.Equals(value) = false) Then
 				Me._PhilHealthMonthly = value
+			End If
+		End Set
+	End Property
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tbl_EmployeeRequirements")>  _
+Partial Public Class tbl_EmployeeRequirement
+	
+	Private _EmpID As String
+	
+	Private _Xray As System.Nullable(Of Integer)
+	
+	Private _Transcript As System.Nullable(Of Integer)
+	
+	Private _Birth As System.Nullable(Of Integer)
+	
+	Private _SSS As System.Nullable(Of Integer)
+	
+	Private _PictureID As System.Nullable(Of Integer)
+	
+	Private _Phil As System.Nullable(Of Integer)
+	
+	Private _Tin As System.Nullable(Of Integer)
+	
+	Private _Pagibig As System.Nullable(Of Integer)
+	
+	Private _NBI As System.Nullable(Of Integer)
+	
+	Private _Police As System.Nullable(Of Integer)
+	
+	Private _MayorsPermit As System.Nullable(Of Integer)
+	
+	Private _Brgy As System.Nullable(Of Integer)
+	
+	Private _DrugTest As System.Nullable(Of Integer)
+	
+	Private _Certificate As System.Nullable(Of Integer)
+	
+	Private _SSSNumber As String
+	
+	Private _PhiNumber As String
+	
+	Private _TINNUmber As String
+	
+	Private _PagibigNumber As String
+	
+	Private _RTNNumber As String
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EmpID", DbType:="NVarChar(50)")>  _
+	Public Property EmpID() As String
+		Get
+			Return Me._EmpID
+		End Get
+		Set
+			If (String.Equals(Me._EmpID, value) = false) Then
+				Me._EmpID = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Xray", DbType:="Int")>  _
+	Public Property Xray() As System.Nullable(Of Integer)
+		Get
+			Return Me._Xray
+		End Get
+		Set
+			If (Me._Xray.Equals(value) = false) Then
+				Me._Xray = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Transcript", DbType:="Int")>  _
+	Public Property Transcript() As System.Nullable(Of Integer)
+		Get
+			Return Me._Transcript
+		End Get
+		Set
+			If (Me._Transcript.Equals(value) = false) Then
+				Me._Transcript = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Birth", DbType:="Int")>  _
+	Public Property Birth() As System.Nullable(Of Integer)
+		Get
+			Return Me._Birth
+		End Get
+		Set
+			If (Me._Birth.Equals(value) = false) Then
+				Me._Birth = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SSS", DbType:="Int")>  _
+	Public Property SSS() As System.Nullable(Of Integer)
+		Get
+			Return Me._SSS
+		End Get
+		Set
+			If (Me._SSS.Equals(value) = false) Then
+				Me._SSS = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PictureID", DbType:="Int")>  _
+	Public Property PictureID() As System.Nullable(Of Integer)
+		Get
+			Return Me._PictureID
+		End Get
+		Set
+			If (Me._PictureID.Equals(value) = false) Then
+				Me._PictureID = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Phil", DbType:="Int")>  _
+	Public Property Phil() As System.Nullable(Of Integer)
+		Get
+			Return Me._Phil
+		End Get
+		Set
+			If (Me._Phil.Equals(value) = false) Then
+				Me._Phil = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Tin", DbType:="Int")>  _
+	Public Property Tin() As System.Nullable(Of Integer)
+		Get
+			Return Me._Tin
+		End Get
+		Set
+			If (Me._Tin.Equals(value) = false) Then
+				Me._Tin = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Pagibig", DbType:="Int")>  _
+	Public Property Pagibig() As System.Nullable(Of Integer)
+		Get
+			Return Me._Pagibig
+		End Get
+		Set
+			If (Me._Pagibig.Equals(value) = false) Then
+				Me._Pagibig = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NBI", DbType:="Int")>  _
+	Public Property NBI() As System.Nullable(Of Integer)
+		Get
+			Return Me._NBI
+		End Get
+		Set
+			If (Me._NBI.Equals(value) = false) Then
+				Me._NBI = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Police", DbType:="Int")>  _
+	Public Property Police() As System.Nullable(Of Integer)
+		Get
+			Return Me._Police
+		End Get
+		Set
+			If (Me._Police.Equals(value) = false) Then
+				Me._Police = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_MayorsPermit", DbType:="Int")>  _
+	Public Property MayorsPermit() As System.Nullable(Of Integer)
+		Get
+			Return Me._MayorsPermit
+		End Get
+		Set
+			If (Me._MayorsPermit.Equals(value) = false) Then
+				Me._MayorsPermit = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Brgy", DbType:="Int")>  _
+	Public Property Brgy() As System.Nullable(Of Integer)
+		Get
+			Return Me._Brgy
+		End Get
+		Set
+			If (Me._Brgy.Equals(value) = false) Then
+				Me._Brgy = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DrugTest", DbType:="Int")>  _
+	Public Property DrugTest() As System.Nullable(Of Integer)
+		Get
+			Return Me._DrugTest
+		End Get
+		Set
+			If (Me._DrugTest.Equals(value) = false) Then
+				Me._DrugTest = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Certificate", DbType:="Int")>  _
+	Public Property Certificate() As System.Nullable(Of Integer)
+		Get
+			Return Me._Certificate
+		End Get
+		Set
+			If (Me._Certificate.Equals(value) = false) Then
+				Me._Certificate = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SSSNumber", DbType:="NVarChar(50)")>  _
+	Public Property SSSNumber() As String
+		Get
+			Return Me._SSSNumber
+		End Get
+		Set
+			If (String.Equals(Me._SSSNumber, value) = false) Then
+				Me._SSSNumber = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PhiNumber", DbType:="NVarChar(50)")>  _
+	Public Property PhiNumber() As String
+		Get
+			Return Me._PhiNumber
+		End Get
+		Set
+			If (String.Equals(Me._PhiNumber, value) = false) Then
+				Me._PhiNumber = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TINNUmber", DbType:="NVarChar(50)")>  _
+	Public Property TINNUmber() As String
+		Get
+			Return Me._TINNUmber
+		End Get
+		Set
+			If (String.Equals(Me._TINNUmber, value) = false) Then
+				Me._TINNUmber = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PagibigNumber", DbType:="NVarChar(50)")>  _
+	Public Property PagibigNumber() As String
+		Get
+			Return Me._PagibigNumber
+		End Get
+		Set
+			If (String.Equals(Me._PagibigNumber, value) = false) Then
+				Me._PagibigNumber = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RTNNumber", DbType:="NVarChar(50)")>  _
+	Public Property RTNNumber() As String
+		Get
+			Return Me._RTNNumber
+		End Get
+		Set
+			If (String.Equals(Me._RTNNumber, value) = false) Then
+				Me._RTNNumber = value
+			End If
+		End Set
+	End Property
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tbl_OtherDetails")>  _
+Partial Public Class tbl_OtherDetail
+	
+	Private _EmpID As String
+	
+	Private _DFrom As System.Nullable(Of Date)
+	
+	Private _DTo As System.Nullable(Of Date)
+	
+	Private _HolDet As String
+	
+	Private _OADet As String
+	
+	Private _OSDet As String
+	
+	Private _OTHours As String
+	
+	Private _AbsentDate As String
+	
+	Private _NDHours As String
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EmpID", DbType:="NVarChar(50)")>  _
+	Public Property EmpID() As String
+		Get
+			Return Me._EmpID
+		End Get
+		Set
+			If (String.Equals(Me._EmpID, value) = false) Then
+				Me._EmpID = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DFrom", DbType:="DateTime")>  _
+	Public Property DFrom() As System.Nullable(Of Date)
+		Get
+			Return Me._DFrom
+		End Get
+		Set
+			If (Me._DFrom.Equals(value) = false) Then
+				Me._DFrom = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DTo", DbType:="DateTime")>  _
+	Public Property DTo() As System.Nullable(Of Date)
+		Get
+			Return Me._DTo
+		End Get
+		Set
+			If (Me._DTo.Equals(value) = false) Then
+				Me._DTo = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_HolDet", DbType:="NVarChar(200)")>  _
+	Public Property HolDet() As String
+		Get
+			Return Me._HolDet
+		End Get
+		Set
+			If (String.Equals(Me._HolDet, value) = false) Then
+				Me._HolDet = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OADet", DbType:="NVarChar(MAX)")>  _
+	Public Property OADet() As String
+		Get
+			Return Me._OADet
+		End Get
+		Set
+			If (String.Equals(Me._OADet, value) = false) Then
+				Me._OADet = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OSDet", DbType:="NVarChar(MAX)")>  _
+	Public Property OSDet() As String
+		Get
+			Return Me._OSDet
+		End Get
+		Set
+			If (String.Equals(Me._OSDet, value) = false) Then
+				Me._OSDet = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OTHours", DbType:="NVarChar(50)")>  _
+	Public Property OTHours() As String
+		Get
+			Return Me._OTHours
+		End Get
+		Set
+			If (String.Equals(Me._OTHours, value) = false) Then
+				Me._OTHours = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AbsentDate", DbType:="NVarChar(MAX)")>  _
+	Public Property AbsentDate() As String
+		Get
+			Return Me._AbsentDate
+		End Get
+		Set
+			If (String.Equals(Me._AbsentDate, value) = false) Then
+				Me._AbsentDate = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NDHours", DbType:="NVarChar(50)")>  _
+	Public Property NDHours() As String
+		Get
+			Return Me._NDHours
+		End Get
+		Set
+			If (String.Equals(Me._NDHours, value) = false) Then
+				Me._NDHours = value
 			End If
 		End Set
 	End Property

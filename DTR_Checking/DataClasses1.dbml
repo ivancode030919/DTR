@@ -87,6 +87,8 @@
       <Column Name="IsNoNoonLogs" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="tbl_EmployeeInformation_tbl_Absent" Member="tbl_Absents" ThisKey="EmpID" OtherKey="UserID" Type="tbl_Absent" />
       <Association Name="tbl_EmployeeInformation_tbl_Payroll" Member="tbl_Payrolls" ThisKey="EmpID" OtherKey="EmpID" Type="tbl_Payroll" />
+      <Association Name="tbl_EmployeeInformation_tbl_EmployeeRequirement" Member="tbl_EmployeeRequirements" ThisKey="EmpID" OtherKey="EmpID" Type="tbl_EmployeeRequirement" />
+      <Association Name="tbl_EmployeeInformation_tbl_OtherDetail" Member="tbl_OtherDetails" ThisKey="EmpID" OtherKey="EmpID" Type="tbl_OtherDetail" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_Payroll" Member="tbl_Payrolls">
@@ -146,6 +148,45 @@
       <Association Name="tbl_EmployeeInformation_tbl_Payroll" Member="tbl_EmployeeInformation" ThisKey="EmpID" OtherKey="EmpID" Type="tbl_EmployeeInformation" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
+  <Table Name="dbo.tbl_EmployeeRequirements" Member="tbl_EmployeeRequirements">
+    <Type Name="tbl_EmployeeRequirement">
+      <Column Name="EmpID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Xray" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Transcript" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Birth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SSS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PictureID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Phil" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Pagibig" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NBI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Police" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MayorsPermit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Brgy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DrugTest" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Certificate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SSSNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhiNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TINNUmber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PagibigNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RTNNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_EmployeeInformation_tbl_EmployeeRequirement" Member="tbl_EmployeeInformation" ThisKey="EmpID" OtherKey="EmpID" Type="tbl_EmployeeInformation" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_OtherDetails" Member="tbl_OtherDetails">
+    <Type Name="tbl_OtherDetail">
+      <Column Name="EmpID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HolDet" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="OADet" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OSDet" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OTHours" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AbsentDate" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NDHours" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_EmployeeInformation_tbl_OtherDetail" Member="tbl_EmployeeInformation" ThisKey="EmpID" OtherKey="EmpID" Type="tbl_EmployeeInformation" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
   <Function Name="dbo.SP_DTRWPAY" Method="SP_DTRWPAY">
     <Parameter Name="p_DATEFROM" Type="System.DateTime" DbType="Date" />
     <Parameter Name="p_DATETO" Type="System.DateTime" DbType="Date" />
@@ -156,5 +197,27 @@
       <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Session" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.SP_PayrollAdjustment" Method="SP_PayrollAdjustment">
+    <Parameter Name="EMPID" Parameter="eMPID" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="PERIODFROM" Parameter="pERIODFROM" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="NOD" Parameter="nOD" Type="System.Decimal" DbType="Decimal(8,2)" />
+    <Parameter Name="HOLIDAY" Parameter="hOLIDAY" Type="System.Decimal" DbType="Decimal(8,2)" />
+    <Parameter Name="OVERTIME" Parameter="oVERTIME" Type="System.Decimal" DbType="Decimal(8,2)" />
+    <Parameter Name="SOTHERS" Parameter="sOTHERS" Type="System.Decimal" DbType="Decimal(8,2)" />
+    <Parameter Name="SOTHERSDETAILS" Parameter="sOTHERSDETAILS" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="SSS" Parameter="sSS" Type="System.Decimal" DbType="Decimal(8,2)" />
+    <Parameter Name="PhilHealth" Parameter="philHealth" Type="System.Decimal" DbType="Decimal(8,2)" />
+    <Parameter Name="PAGIBIG" Parameter="pAGIBIG" Type="System.Decimal" DbType="Decimal(8,2)" />
+    <Parameter Name="SSSb" Parameter="sSSb" Type="System.Decimal" DbType="Decimal(8,2)" />
+    <Parameter Name="PAGIBIGb" Parameter="pAGIBIGb" Type="System.Decimal" DbType="Decimal(8,2)" />
+    <Parameter Name="OTHERSb" Parameter="oTHERSb" Type="System.Decimal" DbType="Decimal(8,2)" />
+    <Parameter Name="SSSLOAN" Parameter="sSSLOAN" Type="System.Decimal" DbType="Decimal(8,2)" />
+    <Parameter Name="PLOAN" Parameter="pLOAN" Type="System.Decimal" DbType="Decimal(8,2)" />
+    <Parameter Name="DOTHERS" Parameter="dOTHERS" Type="System.Decimal" DbType="Decimal(8,2)" />
+    <Parameter Name="DOTHERSDETAILS" Parameter="dOTHERSDETAILS" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="HOLIDAYDETAILS" Parameter="hOLIDAYDETAILS" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="WTAX" Parameter="wTAX" Type="System.Decimal" DbType="Decimal(8,2)" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>
