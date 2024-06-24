@@ -23,29 +23,19 @@ Partial Class Home
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.ExcelDataSource1 = New DevExpress.DataAccess.Excel.ExcelDataSource()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Panel1.SuspendLayout()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'ExcelDataSource1
         '
         Me.ExcelDataSource1.Name = "ExcelDataSource1"
         '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(5, 5)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(148, 372)
-        Me.Panel1.TabIndex = 2
-        '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(3, 68)
+        Me.Button2.Location = New System.Drawing.Point(151, 3)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(142, 59)
         Me.Button2.TabIndex = 1
@@ -61,12 +51,22 @@ Partial Class Home
         Me.Button1.Text = "Check DTR"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.Controls.Add(Me.Button1)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Button2)
+        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(5, 5)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(298, 362)
+        Me.FlowLayoutPanel1.TabIndex = 2
+        '
         'Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(158, 382)
-        Me.Controls.Add(Me.Panel1)
+        Me.ClientSize = New System.Drawing.Size(308, 372)
+        Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Home"
@@ -75,12 +75,12 @@ Partial Class Home
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Home"
-        Me.Panel1.ResumeLayout(False)
+        Me.FlowLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
     Private WithEvents ExcelDataSource1 As DevExpress.DataAccess.Excel.ExcelDataSource
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
 End Class

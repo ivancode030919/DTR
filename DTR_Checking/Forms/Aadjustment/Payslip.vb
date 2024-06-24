@@ -209,7 +209,7 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Class_Update.RemoveManadatory(EIDtxt.Text, PeriodFrom,
                                       Double.Parse(Nodtxt.Text), Double.Parse(Tholidaytxt.Text),
-                                      Double.Parse(Ottxt.Text), Double.Parse(SOtherstxt.Text),
+                                      Double.Parse(Tottxt.Text), Double.Parse(SOtherstxt.Text),
                                       otherstxt.Text,
                                       Double.Parse(Ssstxt.Text), Double.Parse(Philtxt.Text),
                                        Double.Parse(pagibigtxt.Text), Double.Parse(SssloanBtxt.Text),
@@ -217,7 +217,6 @@
                                        Double.Parse(Sssloantxt.Text), Double.Parse(pagibigloantxt.Text),
                                        Double.Parse(Dotherstxt.Text), OADettxt.Text, Holidaytxt.Text,
                                        Double.Parse(WtaxAmounttxt.Text))
-
         display()
         Uncheck()
     End Sub

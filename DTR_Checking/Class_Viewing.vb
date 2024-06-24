@@ -141,7 +141,7 @@ Public Class Class_Viewing
                     .otherstxt.Text = q.OSDet.ToString
                     .Grosstxt.Text = Decimal.Parse(q.TSalary).ToString("F2")
                     .tsalarytxt.Text = Decimal.Parse(q.Rate).ToString("F2")
-                    .Tottxt.Text = q.OTHours.ToString
+                    .Tottxt.Text = Decimal.Parse(q.Overtime).ToString("F2")
                     .Tholidaytxt.Text = Decimal.Parse(q.Holiday).ToString("F2")
                     .SOtherstxt.Text = Decimal.Parse(q.SOthers).ToString("F3")
                     .Ssstxt.Text = Decimal.Parse(q.SSS).ToString("F2")
