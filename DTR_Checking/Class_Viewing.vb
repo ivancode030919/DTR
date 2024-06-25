@@ -63,6 +63,7 @@ Public Class Class_Viewing
 
     Public Shared Function GetSeeionsCount(ByVal Empid As String) As Object
         Dim curreteyear As Integer = DateTime.Now.Year
+
         Dim query = (From p In db.tbl_Absents
                      Where p.UserID = Empid AndAlso p.Date.Value.Year = curreteyear AndAlso (p.Session = "HP" Or p.Session = "WP")
                      Group p By p.UserID, p.Session Into SessionGroup = Group
@@ -190,5 +191,19 @@ Public Class Class_Viewing
         ' Execute the query and return the results as a list
         Return query.ToList()
     End Function
+
+
+
+    Public Shared Function GetOT(ByVal DateFrom As Date, ByVal DateTo As Date, ByVal Empname As String)
+
+        Dim query = db.SP_CheckOT(DateFrom, DateTo, Empname)
+
+        Return query
+
+    End Function
+
+
+
+
 
 End Class

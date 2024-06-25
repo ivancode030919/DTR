@@ -4,6 +4,21 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         View()
+        Suggest()
+    End Sub
+    Private Sub Suggest()
+        Dim payList As List(Of String) = Class_Viewing.GetEmployee
+
+        Dim suggestions As New AutoCompleteStringCollection()
+        suggestions.AddRange(payList.ToArray())
+
+        With Txt1
+            .Text = ""
+            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            .AutoCompleteSource = AutoCompleteSource.CustomSource
+            .AutoCompleteCustomSource = suggestions
+        End With
+
     End Sub
 
     Public Sub View()

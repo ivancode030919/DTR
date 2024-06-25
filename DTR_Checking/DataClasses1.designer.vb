@@ -100,12 +100,6 @@ Partial Public Class DataClasses1DataContext
 		End Get
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.SP_DTRWPAY")>  _
-	Public Function SP_DTRWPAY(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="Date")> ByVal p_DATEFROM As System.Nullable(Of Date), <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="Date")> ByVal p_DATETO As System.Nullable(Of Date), <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(200)")> ByVal p_SEARCH As String) As ISingleResult(Of SP_DTRWPAYResult)
-		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), p_DATEFROM, p_DATETO, p_SEARCH)
-		Return CType(result.ReturnValue,ISingleResult(Of SP_DTRWPAYResult))
-	End Function
-	
 	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.SP_PayrollAdjustment")>  _
 	Public Function SP_PayrollAdjustment( _
 				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="EMPID", DbType:="VarChar(200)")> ByVal eMPID As String,  _
@@ -129,6 +123,18 @@ Partial Public Class DataClasses1DataContext
 				<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="WTAX", DbType:="Decimal(8,2)")> ByVal wTAX As System.Nullable(Of Decimal)) As Integer
 		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), eMPID, pERIODFROM, nOD, hOLIDAY, oVERTIME, sOTHERS, sOTHERSDETAILS, sSS, philHealth, pAGIBIG, sSSb, pAGIBIGb, oTHERSb, sSSLOAN, pLOAN, dOTHERS, dOTHERSDETAILS, hOLIDAYDETAILS, wTAX)
 		Return CType(result.ReturnValue,Integer)
+	End Function
+	
+	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.SP_DTRWPAY")>  _
+	Public Function SP_DTRWPAY(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="Date")> ByVal p_DATEFROM As System.Nullable(Of Date), <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="Date")> ByVal p_DATETO As System.Nullable(Of Date), <Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(200)")> ByVal p_SEARCH As String) As ISingleResult(Of SP_DTRWPAYResult)
+		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), p_DATEFROM, p_DATETO, p_SEARCH)
+		Return CType(result.ReturnValue,ISingleResult(Of SP_DTRWPAYResult))
+	End Function
+	
+	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.SP_CheckOT")>  _
+	Public Function SP_CheckOT(<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="Datrfrom", DbType:="Date")> ByVal datrfrom As System.Nullable(Of Date), <Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="Datrto", DbType:="Date")> ByVal datrto As System.Nullable(Of Date), <Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="Name", DbType:="VarChar(200)")> ByVal name As String) As ISingleResult(Of SP_CheckOTResult)
+		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), datrfrom, datrto, name)
+		Return CType(result.ReturnValue,ISingleResult(Of SP_CheckOTResult))
 	End Function
 End Class
 
@@ -3200,6 +3206,97 @@ Partial Public Class SP_DTRWPAYResult
 		Set
 			If (String.Equals(Me._Session, value) = false) Then
 				Me._Session = value
+			End If
+		End Set
+	End Property
+End Class
+
+Partial Public Class SP_CheckOTResult
+	
+	Private _EmpID As String
+	
+	Private _Name As String
+	
+	Private _OTHours As String
+	
+	Private _Amount As System.Nullable(Of Decimal)
+	
+	Private _PeriodFrom As System.Nullable(Of Date)
+	
+	Private _PeriodTo As System.Nullable(Of Date)
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EmpID", DbType:="NVarChar(50)")>  _
+	Public Property EmpID() As String
+		Get
+			Return Me._EmpID
+		End Get
+		Set
+			If (String.Equals(Me._EmpID, value) = false) Then
+				Me._EmpID = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Name", DbType:="NVarChar(2000)")>  _
+	Public Property Name() As String
+		Get
+			Return Me._Name
+		End Get
+		Set
+			If (String.Equals(Me._Name, value) = false) Then
+				Me._Name = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OTHours", DbType:="NVarChar(50)")>  _
+	Public Property OTHours() As String
+		Get
+			Return Me._OTHours
+		End Get
+		Set
+			If (String.Equals(Me._OTHours, value) = false) Then
+				Me._OTHours = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Amount", DbType:="Decimal(8,2)")>  _
+	Public Property Amount() As System.Nullable(Of Decimal)
+		Get
+			Return Me._Amount
+		End Get
+		Set
+			If (Me._Amount.Equals(value) = false) Then
+				Me._Amount = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PeriodFrom", DbType:="Date")>  _
+	Public Property PeriodFrom() As System.Nullable(Of Date)
+		Get
+			Return Me._PeriodFrom
+		End Get
+		Set
+			If (Me._PeriodFrom.Equals(value) = false) Then
+				Me._PeriodFrom = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PeriodTo", DbType:="Date")>  _
+	Public Property PeriodTo() As System.Nullable(Of Date)
+		Get
+			Return Me._PeriodTo
+		End Get
+		Set
+			If (Me._PeriodTo.Equals(value) = false) Then
+				Me._PeriodTo = value
 			End If
 		End Set
 	End Property

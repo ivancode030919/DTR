@@ -34,6 +34,7 @@ Partial Class CheckLeave
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PanelControl4 = New DevExpress.XtraEditors.PanelControl()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,11 +59,11 @@ Partial Class CheckLeave
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Font = New System.Drawing.Font("Arial Unicode MS", 12.0!)
+        Me.DateTimePicker2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateTimePicker2.Location = New System.Drawing.Point(200, 26)
         Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(153, 29)
+        Me.DateTimePicker2.Size = New System.Drawing.Size(153, 26)
         Me.DateTimePicker2.TabIndex = 3
         '
         'Label2
@@ -77,11 +78,11 @@ Partial Class CheckLeave
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Arial Unicode MS", 12.0!)
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateTimePicker1.Location = New System.Drawing.Point(8, 26)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(153, 29)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(153, 26)
         Me.DateTimePicker1.TabIndex = 1
         '
         'Label1
@@ -126,10 +127,10 @@ Partial Class CheckLeave
         '
         'Txt1
         '
-        Me.Txt1.Font = New System.Drawing.Font("Arial Unicode MS", 12.0!)
+        Me.Txt1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.Txt1.Location = New System.Drawing.Point(8, 26)
         Me.Txt1.Name = "Txt1"
-        Me.Txt1.Size = New System.Drawing.Size(351, 29)
+        Me.Txt1.Size = New System.Drawing.Size(351, 26)
         Me.Txt1.TabIndex = 2
         '
         'Label3
@@ -204,4 +205,5 @@ Partial Class CheckLeave
     Friend WithEvents Label3 As Label
     Friend WithEvents PanelControl4 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class

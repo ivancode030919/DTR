@@ -22,5 +22,70 @@ DTR_Checking
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="T:DTR_Checking.SystemsDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DTR_Checking.SystemsDataSet.SP_CheckOTDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DTR_Checking.SystemsDataSet.SP_CheckOTRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DTR_Checking.SystemsDataSet.SP_CheckOTRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DTR_Checking.SystemsDataSetTableAdapters.SP_CheckOTTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DTR_Checking.SystemsDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DTR_Checking.SystemsDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(DTR_Checking.SystemsDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DTR_Checking.SystemsDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(DTR_Checking.SystemsDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DTR_Checking.SystemsDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(DTR_Checking.SystemsDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DTR_Checking.SystemsDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DTR_Checking.SystemsDataSetTableAdapters.TableAdapterManager.UpdateAll(DTR_Checking.SystemsDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DTR_Checking.SystemsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DTR_Checking.SystemsDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
 </members>
 </doc>

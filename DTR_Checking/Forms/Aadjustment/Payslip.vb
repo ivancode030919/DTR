@@ -243,4 +243,9 @@
         CheckBox28.Checked = False
         CheckBox29.Checked = False
     End Sub
+
+    Private Sub Payslip_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Me.Dispose()
+        Home.Show()
+    End Sub
 End Class
