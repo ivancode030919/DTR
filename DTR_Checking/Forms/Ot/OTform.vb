@@ -55,7 +55,11 @@ Public Class OTform
 
         Me.SP_CheckOTTableAdapter.Fill(Me.SystemsDataSet.SP_CheckOT, DateTimePicker1.Value, DateTimePicker2.Value, Txt1.Text)
 
-        Dim par1 As New ReportParameter("@Datefrom", DateTimePicker1.Value)
+
+        Dim par As New ReportParameter("Dfrom", DateTimePicker1.Value.ToShortDateString)
+        Me.ReportViewer1.LocalReport.SetParameters(par)
+
+        Dim par1 As New ReportParameter("Dto", DateTimePicker2.Value.ToShortDateString)
         Me.ReportViewer1.LocalReport.SetParameters(par1)
 
         Me.ReportViewer1.RefreshReport()

@@ -37,7 +37,6 @@ Partial Class Home
         '
         'Button2
         '
-        Me.Button2.Enabled = False
         Me.Button2.Location = New System.Drawing.Point(151, 3)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(142, 59)
@@ -47,7 +46,6 @@ Partial Class Home
         '
         'Button1
         '
-        Me.Button1.Enabled = False
         Me.Button1.Location = New System.Drawing.Point(3, 3)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(142, 59)

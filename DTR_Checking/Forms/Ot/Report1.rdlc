@@ -781,7 +781,7 @@
             <Top>0.4054in</Top>
             <Left>0.18625in</Left>
             <Height>0.97917in</Height>
-            <Width>10.99161in</Width>
+            <Width>10.99162in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -805,7 +805,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
-            <Top>0.1554in</Top>
+            <Top>0.16929in</Top>
             <Left>0.18625in</Left>
             <Height>0.23611in</Height>
             <Width>2.00375in</Width>
@@ -820,25 +820,33 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Textbox Name="Textbox38">
+          <Textbox Name="Dfrom">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>@Datefrom</Value>
+                    <Value>=Parameters!Dfrom.Value</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value> -to- </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!Dto.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <rd:DefaultName>Textbox38</rd:DefaultName>
-            <Top>0.1554in</Top>
+            <rd:DefaultName>Dfrom</rd:DefaultName>
+            <Top>0.16929in</Top>
             <Left>2.20389in</Left>
-            <Height>0.25in</Height>
-            <Width>1in</Width>
+            <Height>0.23611in</Height>
+            <Width>2.55208in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -865,9 +873,16 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="DateFrom">
-      <DataType>DateTime</DataType>
+    <ReportParameter Name="Dfrom">
+      <DataType>String</DataType>
       <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Dto">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
@@ -879,7 +894,12 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>DateFrom</ParameterName>
+          <ParameterName>Dfrom</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Dto</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

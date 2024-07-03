@@ -293,7 +293,6 @@ D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\de\DevExpress.Pdf.v
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\es\DevExpress.Pdf.v21.2.Core.resources.dll
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\ja\DevExpress.Pdf.v21.2.Core.resources.dll
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\ru\DevExpress.Pdf.v21.2.Core.resources.dll
-D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\obj\Debug\DTR_Checking.vbprojAssemblyReference.cache
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\obj\Debug\DTR_Checking.Aadjustment.resources
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\obj\Debug\DTR_Checking.Payslip.resources
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\obj\Debug\DTR_Checking.CheckLeave.resources
@@ -377,3 +376,4 @@ D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\zh-Hans\Microsoft.S
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\obj\Debug\RdlCompile.cache
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\obj\Debug\RdlCompile.compiled
+D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\obj\Debug\DTR_Checking.vbproj.AssemblyReference.cache
