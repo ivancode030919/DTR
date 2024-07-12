@@ -17,6 +17,21 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -27,6 +42,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>DTR_Checking.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -166,6 +182,12 @@
     <Compile Include="Forms\LeaveDetails.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Leave\LeaveForm.Designer.vb">
+      <DependentUpon>LeaveForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Leave\LeaveForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Ot\OTform.Designer.vb">
       <DependentUpon>OTform.vb</DependentUpon>
     </Compile>
@@ -212,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LeaveDetails.resx">
       <DependentUpon>LeaveDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Leave\LeaveForm.resx">
+      <DependentUpon>LeaveForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ot\OTform.resx">
       <DependentUpon>OTform.vb</DependentUpon>
@@ -261,7 +286,20 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\warning_sign_gradient_shine.jpg" />
     <Content Include="—Pngtree—vector edit icon_4162763.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

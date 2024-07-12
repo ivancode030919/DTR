@@ -222,18 +222,6 @@ D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\DTR_Checking.exe.co
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\DTR_Checking.exe
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\DTR_Checking.pdb
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\DTR_Checking.xml
-D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\DevExpress.CodeParser.v21.2.dll
-D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\DevExpress.Data.Desktop.v21.2.dll
-D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\DevExpress.Data.v21.2.dll
-D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\DevExpress.DataAccess.v21.2.dll
-D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\DevExpress.Office.v21.2.Core.dll
-D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\DevExpress.Printing.v21.2.Core.dll
-D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\DevExpress.RichEdit.v21.2.Core.dll
-D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\DevExpress.Sparkline.v21.2.Core.dll
-D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\DevExpress.Utils.v21.2.dll
-D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\DevExpress.Xpo.v21.2.dll
-D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\DevExpress.XtraBars.v21.2.dll
-D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\DevExpress.XtraEditors.v21.2.dll
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\DevExpress.Pdf.v21.2.Core.dll
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\DevExpress.Pdf.v21.2.Drawing.dll
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\DevExpress.Data.Desktop.v21.2.xml
@@ -377,3 +365,4 @@ D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\bin\Debug\zh-Hant\Microsoft.S
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\obj\Debug\RdlCompile.cache
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\obj\Debug\RdlCompile.compiled
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\obj\Debug\DTR_Checking.vbproj.AssemblyReference.cache
+D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\obj\Debug\DTR_Checking.LeaveForm.resources

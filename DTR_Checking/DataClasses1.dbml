@@ -233,4 +233,17 @@
       <Column Name="PeriodTo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.Sp_DisplayCorrectLeave" Method="Sp_DisplayCorrectLeave">
+    <Parameter Name="name" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="Sp_DisplayCorrectLeaveResult">
+      <Column Name="EmpID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="DaysLeave" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LeaveIssue" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="CorrectDaysLeave" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_FixLeave" Method="Sp_FixLeave">
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

@@ -24,6 +24,8 @@ Partial Class OTform
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.SPCheckOTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SystemsDataSet = New DTR_Checking.SystemsDataSet()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl()
         Me.Txt1 = New System.Windows.Forms.TextBox()
@@ -35,20 +37,26 @@ Partial Class OTform
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.SPCheckOTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SystemsDataSet = New DTR_Checking.SystemsDataSet()
         Me.SP_CheckOTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SP_CheckOTTableAdapter = New DTR_Checking.SystemsDataSetTableAdapters.SP_CheckOTTableAdapter()
-        Me.Panel1.SuspendLayout()
-        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelControl3.SuspendLayout()
-        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelControl1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         CType(Me.SPCheckOTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SystemsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         CType(Me.SP_CheckOTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'SPCheckOTBindingSource
+        '
+        Me.SPCheckOTBindingSource.DataMember = "SP_CheckOT"
+        Me.SPCheckOTBindingSource.DataSource = Me.SystemsDataSet
+        '
+        'SystemsDataSet
+        '
+        Me.SystemsDataSet.DataSetName = "SystemsDataSet"
+        Me.SystemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Panel1
         '
@@ -160,16 +168,6 @@ Partial Class OTform
         Me.ReportViewer1.Size = New System.Drawing.Size(1100, 560)
         Me.ReportViewer1.TabIndex = 0
         '
-        'SPCheckOTBindingSource
-        '
-        Me.SPCheckOTBindingSource.DataMember = "SP_CheckOT"
-        Me.SPCheckOTBindingSource.DataSource = Me.SystemsDataSet
-        '
-        'SystemsDataSet
-        '
-        Me.SystemsDataSet.DataSetName = "SystemsDataSet"
-        Me.SystemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'SP_CheckOTBindingSource
         '
         Me.SP_CheckOTBindingSource.DataMember = "SP_CheckOT"
@@ -189,18 +187,15 @@ Partial Class OTform
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "OTform"
         Me.Padding = New System.Windows.Forms.Padding(5)
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Overtime"
-        Me.Panel1.ResumeLayout(False)
-        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControl3.ResumeLayout(False)
-        Me.PanelControl3.PerformLayout()
-        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelControl1.ResumeLayout(False)
-        Me.PanelControl1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
         CType(Me.SPCheckOTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SystemsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.PanelControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
         CType(Me.SP_CheckOTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

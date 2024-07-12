@@ -481,7 +481,6 @@ Partial Class Aadjustment
         Me.Name = "Aadjustment"
         Me.Padding = New System.Windows.Forms.Padding(8)
         Me.ShowIcon = False
-        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Aadjustment"
         Me.Panel1.ResumeLayout(False)

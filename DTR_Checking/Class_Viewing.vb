@@ -81,8 +81,9 @@ Public Class Class_Viewing
         Dim curreteyear As Integer = DateTime.Now.Year
         Dim query = (From p In db.tbl_Absents
                      Where p.UserID = Empid AndAlso p.Date.Value.Year = curreteyear
+                     Order By p.Date
                      Let x = "1"
-                     Select p.UserID, p.Session, x).ToList
+                     Select p.UserID, p.Session, x, p.Date).ToList
         Return query
     End Function
 
@@ -183,9 +184,13 @@ Public Class Class_Viewing
         ' Retrieve top 10 distinct employee names from the tbl_Payrolls table
         Dim currentYear As Integer = Date.Now.Year
 
+        Dim GetCurrentPeriod = (From p In db.tbl_Payrolls
+                                Order By p.PeriodFrom Descending
+                                Select p.PeriodFrom).FirstOrDefault
+
         ' Create the query to select distinct employee names for the current year
         Dim query = (From p In db.tbl_Payrolls
-                     Where p.PeriodFrom.Value.Year = currentYear
+                     Where p.PeriodFrom = GetCurrentPeriod
                      Select p.Name).Distinct()
 
         ' Execute the query and return the results as a list
@@ -202,7 +207,22 @@ Public Class Class_Viewing
 
     End Function
 
+    Public Shared Function GetEmployeeWithLeave(ByVal Empname As String)
 
+        Dim queryEmployeeWithLEave = db.Sp_DisplayCorrectLeave(Empname)
+
+        Return queryEmployeeWithLEave
+
+    End Function
+
+    Public Shared Function GetEmployeeCOunt() As Object
+
+        Dim query = (From p In db.tbl_EmployeeInformations
+                     Where p.Status = "Active" AndAlso p.Payment <> "Resigned"
+                     Select p.EmpID).Count
+
+        Return query
+    End Function
 
 
 

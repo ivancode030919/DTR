@@ -136,6 +136,20 @@ Partial Public Class DataClasses1DataContext
 		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), datrfrom, datrto, name)
 		Return CType(result.ReturnValue,ISingleResult(Of SP_CheckOTResult))
 	End Function
+	
+	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.Sp_DisplayCorrectLeave")>  _
+	Public Function Sp_DisplayCorrectLeave(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(200)")> ByVal name As String) As ISingleResult(Of Sp_DisplayCorrectLeaveResult)
+		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), name)
+		Return CType(result.ReturnValue,ISingleResult(Of Sp_DisplayCorrectLeaveResult))
+	End Function
+
+	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.Sp_FixLeave")>
+	Public Function Sp_FixLeave() As Integer
+
+		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod, MethodInfo))
+		Return CType(result.ReturnValue, Integer)
+
+	End Function
 End Class
 
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tbl_Absent")>  _
@@ -3297,6 +3311,83 @@ Partial Public Class SP_CheckOTResult
 		Set
 			If (Me._PeriodTo.Equals(value) = false) Then
 				Me._PeriodTo = value
+			End If
+		End Set
+	End Property
+End Class
+
+Partial Public Class Sp_DisplayCorrectLeaveResult
+	
+	Private _EmpID As String
+	
+	Private _name As String
+	
+	Private _DaysLeave As System.Nullable(Of Double)
+	
+	Private _LeaveIssue As String
+	
+	Private _CorrectDaysLeave As System.Nullable(Of Double)
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EmpID", DbType:="NVarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property EmpID() As String
+		Get
+			Return Me._EmpID
+		End Get
+		Set
+			If (String.Equals(Me._EmpID, value) = false) Then
+				Me._EmpID = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_name", DbType:="NVarChar(2000)")>  _
+	Public Property name() As String
+		Get
+			Return Me._name
+		End Get
+		Set
+			If (String.Equals(Me._name, value) = false) Then
+				Me._name = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DaysLeave", DbType:="Float")>  _
+	Public Property DaysLeave() As System.Nullable(Of Double)
+		Get
+			Return Me._DaysLeave
+		End Get
+		Set
+			If (Me._DaysLeave.Equals(value) = false) Then
+				Me._DaysLeave = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_LeaveIssue", DbType:="NChar(10)")>  _
+	Public Property LeaveIssue() As String
+		Get
+			Return Me._LeaveIssue
+		End Get
+		Set
+			If (String.Equals(Me._LeaveIssue, value) = false) Then
+				Me._LeaveIssue = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CorrectDaysLeave", DbType:="Float")>  _
+	Public Property CorrectDaysLeave() As System.Nullable(Of Double)
+		Get
+			Return Me._CorrectDaysLeave
+		End Get
+		Set
+			If (Me._CorrectDaysLeave.Equals(value) = false) Then
+				Me._CorrectDaysLeave = value
 			End If
 		End Set
 	End Property

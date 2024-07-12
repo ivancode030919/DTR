@@ -54,10 +54,11 @@
             index = e.RowIndex
             Dim selectedrow As DataGridViewRow
             selectedrow = Dgv.Rows(index)
+
             With LeaveDetails
                 .EmpID = selectedrow.Cells(0).Value.ToString
-                .Label4.Text = selectedrow.Cells(1).Value.ToString
-                .Label6.Text = selectedrow.Cells(0).Value.ToString
+                .Label22.Text = selectedrow.Cells(1).Value.ToString
+                .Label20.Text = selectedrow.Cells(0).Value.ToString
                 .ShowDialog()
             End With
 
