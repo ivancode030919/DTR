@@ -53,7 +53,7 @@
         <elementListCompartment Id="29dcb170-0d6e-4278-bdf3-5d07de9d7c9f" absoluteBounds="9.015, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.625 : 12.3342691471354); (7.79166666666667 : 12.3342691471354 : JumpStart); (7.95833333333333 : 12.3342691471354 : JumpEnd); (10 : 12.3342691471354); (10 : 3.0401025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(4.625 : 12.3342691471354); (10 : 12.3342691471354); (10 : 3.0401025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/tbl_EmployeeInformation/tbl_EmployeeInformation_tbl_OtherDetail" />
       <nodes>
         <classShapeMoniker Id="51bf6377-ec12-4e44-8098-69c8765af52a" />

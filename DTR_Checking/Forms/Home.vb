@@ -10,8 +10,7 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Me.Hide()
-        Payslip.Show()
+        loginform.Show()
     End Sub
 
     Private Sub Home_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

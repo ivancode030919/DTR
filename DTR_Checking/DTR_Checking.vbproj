@@ -188,6 +188,12 @@
     <Compile Include="Forms\Leave\LeaveForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\login\loginform.Designer.vb">
+      <DependentUpon>loginform.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\login\loginform.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Ot\OTform.Designer.vb">
       <DependentUpon>OTform.vb</DependentUpon>
     </Compile>
@@ -237,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Leave\LeaveForm.resx">
       <DependentUpon>LeaveForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\login\loginform.resx">
+      <DependentUpon>loginform.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ot\OTform.resx">
       <DependentUpon>OTform.vb</DependentUpon>

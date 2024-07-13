@@ -4,7 +4,7 @@ Public Class LeaveForm
     Private Start As Integer
     Private Sub LeaveForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'display()
+        display()
         Suggest()
     End Sub
 
@@ -19,10 +19,12 @@ Public Class LeaveForm
         suggestions.AddRange(payList.ToArray())
 
         With Txt1
+
             .Text = ""
             .AutoCompleteMode = AutoCompleteMode.SuggestAppend
             .AutoCompleteSource = AutoCompleteSource.CustomSource
             .AutoCompleteCustomSource = suggestions
+
         End With
 
     End Sub

@@ -137,18 +137,16 @@ Partial Public Class DataClasses1DataContext
 		Return CType(result.ReturnValue,ISingleResult(Of SP_CheckOTResult))
 	End Function
 	
+	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.Sp_FixLeave")>  _
+	Public Function Sp_FixLeave() As Integer
+		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo))
+		Return CType(result.ReturnValue,Integer)
+	End Function
+	
 	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.Sp_DisplayCorrectLeave")>  _
 	Public Function Sp_DisplayCorrectLeave(<Global.System.Data.Linq.Mapping.ParameterAttribute(DbType:="VarChar(200)")> ByVal name As String) As ISingleResult(Of Sp_DisplayCorrectLeaveResult)
 		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), name)
 		Return CType(result.ReturnValue,ISingleResult(Of Sp_DisplayCorrectLeaveResult))
-	End Function
-
-	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.Sp_FixLeave")>
-	Public Function Sp_FixLeave() As Integer
-
-		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod, MethodInfo))
-		Return CType(result.ReturnValue, Integer)
-
 	End Function
 End Class
 

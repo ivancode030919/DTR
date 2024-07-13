@@ -366,3 +366,4 @@ D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\obj\Debug\RdlCompile.cache
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\obj\Debug\RdlCompile.compiled
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\obj\Debug\DTR_Checking.vbproj.AssemblyReference.cache
 D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\obj\Debug\DTR_Checking.LeaveForm.resources
+D:\IVAN FILES\25.) GitHub\DTR\DTR\DTR\DTR_Checking\obj\Debug\DTR_Checking.loginform.resources
